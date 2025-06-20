@@ -1,13 +1,14 @@
 
 import './App.css'
+import Nav from './Components/Nav'
 
 function App() {
   
 
   return (
-    <>
-    heythere
-    </>
+    <section className='w-11/12 mx-auto'>
+    <Nav></Nav>
+    </section>
   )
 }
 
