@@ -71,8 +71,9 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        <div className="navbar-end space-x-3">
+          <a className="underline ">Register </a>
+          <a className="btn">Login </a>
         </div>
       </div>
     </div>
