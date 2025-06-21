@@ -7,13 +7,23 @@ import {
   RouterProvider,
 } from "react-router";
 import Error from './Components/Error.jsx';
+import Register from './Components/Register.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    errorElement: <Error></Error>
+    errorElement: <Error></Error>,
+    children:[
+      {
+        
+      }
+    ]
   },
+  {
+    path:'/register',
+    element: <Register></Register>
+  }
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
