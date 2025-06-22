@@ -1,4 +1,4 @@
-import React from "react";
+import login from '../images/Login.gif'
 
 const Register = () => {
     const handlesubmit =e=>{
@@ -6,9 +6,16 @@ const Register = () => {
     }
   return (
     <div>
+            <div className='flex justify-center items-center'>
+                 
+            </div>
       <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          
+        <h1 className='text-center font-bold text-4xl'>Register now</h1>
+        <div className="hero-content gap-2 flex-col lg:flex-row-reverse">
+       
+          <div>
+            <img src={login} alt="loginimage" />
+          </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
               <fieldset onSubmit={handlesubmit} className="fieldset">
