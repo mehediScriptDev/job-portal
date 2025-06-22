@@ -8,6 +8,7 @@ import {
 } from "react-router";
 import Error from './Components/Error.jsx';
 import Register from './Components/Register.jsx';
+import Home from './Components/Home.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
     errorElement: <Error></Error>,
     children:[
       {
-        
+        path:'/',
+        element:<Home></Home>
       }
     ]
   },
