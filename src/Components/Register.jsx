@@ -49,6 +49,7 @@ const Register = () => {
               </svg>
               Login with Google
             </button>
+             <div className="divider pt-3">OR</div>
             </div>
             <div className="card-body">
               <fieldset onSubmit={handlesubmit} className="fieldset space-y-1">
