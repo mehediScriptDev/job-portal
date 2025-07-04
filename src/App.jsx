@@ -2,6 +2,7 @@
 import { Outlet } from 'react-router'
 import './App.css'
 import Nav from './Components/Nav'
+import Footer from './Components/Footer'
 
 function App() {
   
@@ -10,6 +11,7 @@ function App() {
     <section className='w-11/12 mx-auto'>
     <Nav></Nav>
     <Outlet></Outlet>
+    <Footer></Footer>
     </section>
   )
 }

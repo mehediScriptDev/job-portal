@@ -7,7 +7,7 @@ const Register = () => {
   return (
     <div>
       <div className="flex justify-center items-center"></div>
-      <div className="hero bg-base-200 min-h-screen">
+      <div className="hero min-h-screen">
         <div className="hero-content gap-2 flex-col lg:flex-row-reverse">
           <div>
             <img src={login} alt="loginimage" />
