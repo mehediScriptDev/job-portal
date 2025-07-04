@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import login from "../images/Login.gif";
 
 const Register = () => {
@@ -91,6 +92,10 @@ const Register = () => {
                 />
 
                 <button className="btn btn-primary mt-4">Login</button>
+                <div className="flex gap-1 text-sm">
+                  <h1>Already have an account?</h1>
+                  <Link className="underline font-bold">Login</Link>
+                </div>
               </fieldset>
             </div>
           </div>
