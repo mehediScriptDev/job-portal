@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Logo & Description */}
         <div className="md:col-span-1">
-          <h2 className="text-2xl font-bold text-blue-600">JobBox</h2>
+          <h2 className="text-2xl font-bold text-blue-600">JobPortal</h2>
           <p className="text-gray-600 mt-3 text-sm">
             JobBox is the heart of the design community and the best resource to
             discover and connect with designers and jobs worldwide.
