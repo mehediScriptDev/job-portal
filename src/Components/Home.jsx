@@ -8,7 +8,7 @@ const Home = () => {
           <div className="hero-content flex-col lg:flex-row-reverse">
             <img
               src="https://www.webnox.in/wp-content/uploads/2022/10/Job-Portal-Software.png"
-              className="max-w-sm rounded-lg shadow-2xl animate-pulse"
+              className="max-w-sm rounded-lg animate-pulse"
             />
             <div>
               <h1 className="text-5xl font-bold">Job portal website!</h1>
