@@ -1,7 +1,9 @@
 import { Link } from "react-router";
 import login from "../images/Login.gif";
+import { useState } from "react";
 
 const Register = () => {
+  const [err,setError] = useState('');
   const handlesubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -11,8 +13,10 @@ const Register = () => {
 
     const passregex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
 
+    
+
     if(!passregex.test(password)){
-      alert( "Password must be at least 6 characters long, contain at least one uppercase letter and one number.")
+     setError( "Password must be at least 6 characters long, contain at least one uppercase letter and one number.")
     }
 
   };
@@ -107,7 +111,14 @@ const Register = () => {
                 />
 
                 <button className="btn btn-primary mt-4">Login</button>
+                <div>
+                  {
+                    err&&
+                    <p className="text-red-500">{err}</p>
+                  }
+                </div>
                 <div className="flex gap-1 text-sm">
+                  
                   <h1>Already have an account?</h1>
                   <Link className="underline font-bold">Login</Link>
                 </div>
