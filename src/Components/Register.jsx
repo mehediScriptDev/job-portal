@@ -4,6 +4,11 @@ import login from "../images/Login.gif";
 const Register = () => {
   const handlesubmit = (e) => {
     e.target.preventDefault();
+    const form = e.target;
+    const name =form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
   };
   return (
     <div>
@@ -53,7 +58,7 @@ const Register = () => {
              <div className="divider pt-3">OR</div>
             </div>
             <div className="card-body">
-              <fieldset onSubmit={handlesubmit} className="fieldset space-y-1">
+              <form onSubmit={handlesubmit} className="fieldset space-y-1">
                 <label className="label text-xl text-black ">
                   Full Name:
                 </label>
@@ -96,7 +101,7 @@ const Register = () => {
                   <h1>Already have an account?</h1>
                   <Link className="underline font-bold">Login</Link>
                 </div>
-              </fieldset>
+              </form>
             </div>
           </div>
         </div>
