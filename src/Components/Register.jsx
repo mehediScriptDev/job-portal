@@ -3,7 +3,7 @@ import login from "../images/Login.gif";
 
 const Register = () => {
   const handlesubmit = (e) => {
-    e.target.preventDefault();
+    e.preventDefault();
     const form = e.target;
     const name =form.name.value;
     const email = form.email.value;
