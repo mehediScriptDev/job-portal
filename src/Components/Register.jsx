@@ -9,6 +9,12 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    const passregex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+    if(!passregex.test(password)){
+      alert( "Password must be at least 6 characters long, contain at least one uppercase letter and one number.")
+    }
+
   };
   return (
     <div>
@@ -63,8 +69,9 @@ const Register = () => {
                   Full Name:
                 </label>
                 <input
+                required
                   name="name"
-                  type="email"
+                  type="text"
                   className="input py-3"
                   placeholder="Type your full name here"
                 />
@@ -72,8 +79,9 @@ const Register = () => {
                   Username:
                 </label>
                 <input
+                required
                   name="username"
-                  type="email"
+                  type="text"
                   className="input py-3"
                   placeholder="Type your username here"
                 />
@@ -81,6 +89,7 @@ const Register = () => {
                   Email:
                 </label>
                 <input
+                required
                   name="email"
                   type="email"
                   className="input py-3"
@@ -90,6 +99,7 @@ const Register = () => {
                   Password:
                 </label>
                 <input
+                required
                   name="password"
                   type="password"
                   className="input py-3"
