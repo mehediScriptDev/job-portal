@@ -1,13 +1,15 @@
 import { Link } from "react-router";
 import login from "../images/Login.gif";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 const Register = () => {
   const [err,setError] = useState('');
+
+  const {createuser} =useContext();
+
   const handlesubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name =form.name.value;
     const email = form.email.value;
     const password = form.password.value;
 
@@ -19,6 +21,10 @@ const Register = () => {
      setError( "Password must be at least 6 characters long, contain at least one uppercase letter and one number.")
     }
     setError('');
+
+    createuser(email,password)
+    .then(result=>console.log(result.user))
+    .catch(error=>console.log(error.message))
 
   };
   return (
