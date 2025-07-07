@@ -1,11 +1,13 @@
-import { Link } from "react-router";
+
 import login from "../images/Login.gif";
 import { useContext, useState } from "react";
+import AuthContext from "../Context/AuthContext/AuthContext";
+import { Link } from "react-router";
 
 const Register = () => {
   const [err,setError] = useState('');
 
-  const {createuser} =useContext();
+  const {createuser} =useContext(AuthContext);
 
   const handlesubmit = (e) => {
     e.preventDefault();
