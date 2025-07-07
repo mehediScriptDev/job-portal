@@ -8,6 +8,11 @@ const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null);
     const [loading,setLoading] = useState(true);
 
+    const createuser = (email,password)=>{
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth,email,password);
+    }
+
     const authinfo={
         user,
         setUser,
@@ -16,10 +21,7 @@ const AuthProvider = ({children}) => {
         createuser
     }
 
-    const createuser = (email,password)=>{
-        setLoading(true);
-        return createUserWithEmailAndPassword(auth,email,password);
-    }
+    
     return (
         <AuthContext.Provider value={authinfo}>
             {children}
