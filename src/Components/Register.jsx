@@ -117,7 +117,7 @@ const Register = () => {
                   placeholder="Type your Password here"
                 />
 
-                <button className="btn btn-primary mt-4">Login</button>
+                <button className="btn btn-primary mt-4">Register</button>
                 <div>
                   {
                     err&&
