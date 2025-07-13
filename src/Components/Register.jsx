@@ -129,7 +129,7 @@ const Register = () => {
                 <div className="flex gap-1 text-sm">
                   
                   <h1>Already have an account?</h1>
-                  <Link className="underline font-bold">Login</Link>
+                  <Link to={'/login'} className="underline font-bold">Login</Link>
                 </div>
               </form>
             </div>

@@ -39,7 +39,7 @@ const Login = () => {
           </div>
           <div className="card w-full max-w-sm shrink-0">
             <div className="flex justify-center flex-col items-center space-y-2">
-              <h1 className="text-xs text-primary">Register</h1>
+              <h1 className="text-xs text-primary">Login</h1>
             <h1 className="text-3xl font-bold">Start for free today</h1>
             <p className="text-gray-500">
               Access to all features. No credit card required.
@@ -78,26 +78,7 @@ const Login = () => {
             </div>
             <div className="card-body">
               <form onSubmit={handleLogin} className="fieldset space-y-1">
-                <label className="label text-xl text-black ">
-                  Full Name:
-                </label>
-                <input
-                required
-                  name="name"
-                  type="text"
-                  className="input py-3"
-                  placeholder="Type your full name here"
-                />
-                <label className="label text-xl text-black ">
-                  Username:
-                </label>
-                <input
-                required
-                  name="username"
-                  type="text"
-                  className="input py-3"
-                  placeholder="Type your username here"
-                />
+                
                 <label className="label text-xl text-black ">
                   Email:
                 </label>
@@ -128,8 +109,8 @@ const Login = () => {
                 </div>
                 <div className="flex gap-1 text-sm">
                   
-                  <h1>Already have an account?</h1>
-                  <Link className="underline font-bold">Login</Link>
+                  <h1>New to this page?</h1>
+                  <Link to={'/register'} className="underline font-bold">Register</Link>
                 </div>
               </form>
             </div>
