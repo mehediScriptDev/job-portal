@@ -7,7 +7,7 @@ import { Link } from "react-router";
 const Login = () => {
   const [err,setError] = useState('');
 
-  const {createuser} =useContext(AuthContext);
+  const {loginUser} =useContext(AuthContext);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ const Login = () => {
     }
     setError('');
 
-    createuser(email,password)
+    loginUser(email,password)
     .then(result=>console.log(result.user))
     .catch(error=>console.log(error.message))
 
