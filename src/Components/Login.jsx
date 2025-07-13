@@ -25,8 +25,12 @@ const Login = () => {
     setError('');
 
     loginUser(email,password)
-    .then(result=>console.log(result.user))
-    .catch(error=>console.log(error.message))
+    .then(result=>{
+        console.log(result.user)
+    })
+    .catch(error=>{
+        console.log(error)
+    })
 
   };
   return (
