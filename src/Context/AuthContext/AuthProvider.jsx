@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
 import { CgPassword } from 'react-icons/cg';
-import { createUserWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
 import auth from '../../Firebase/firebase.init';
 
 const AuthProvider = ({children}) => {
@@ -11,6 +11,9 @@ const AuthProvider = ({children}) => {
     const createuser = (email,password)=>{
         setLoading(true);
         return createUserWithEmailAndPassword(auth,email,password);
+    }
+    const loginUser = (email,password) =>{
+        return signInWithEmailAndPassword(email,password,auth);
     }
     useEffect(()=>{
         const unsubscribe= onAuthStateChanged(auth,currentUser=>{
@@ -27,7 +30,8 @@ const AuthProvider = ({children}) => {
         setUser,
         setLoading,
         loading,
-        createuser
+        createuser,
+        loginUser
     }
 
     
