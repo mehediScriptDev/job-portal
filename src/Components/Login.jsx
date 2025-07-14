@@ -21,7 +21,9 @@ const Login = () => {
 
     if(!passregex.test(password)){
      setError( "Password must be at least 6 characters long, contain at least one uppercase letter and one number.")
+     return
     }
+    
     setError('');
 
     loginUser(email,password)
@@ -30,6 +32,7 @@ const Login = () => {
     })
     .catch(error=>{
         console.log(error)
+        setError(error.message)
     })
 
   };
