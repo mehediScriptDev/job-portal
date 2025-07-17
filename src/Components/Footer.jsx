@@ -14,7 +14,7 @@ const Footer = () => {
         {/* Logo & Description */}
         <div className="md:col-span-1">
           <div className='flex items-center gap-1.5'>
-            <img src={logo} alt="logo" />
+            <img className='w-20' src={logo} alt="logo" />
             <h2 className="text-2xl font-bold text-blue-600">JobPortal</h2>
           </div>
           <p className="text-gray-600 mt-3 text-sm">
