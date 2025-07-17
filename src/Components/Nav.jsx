@@ -1,18 +1,18 @@
 import logo from '../../public/job.jpeg'
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Nav = () => {
   const links = (
     <>
       <li>
-        <a>Item 1</a>
+        <NavLink to={'/'}>Home</NavLink>
       </li>
       <li>
-        <a>Parent</a>
+        <NavLink>Parent</NavLink>
         
       </li>
       <li>
-        <a>Item 3</a>
+        <NavLink>Item 3</NavLink>
       </li>
     </>
   );
