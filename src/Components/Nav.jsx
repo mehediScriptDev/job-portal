@@ -8,11 +8,11 @@ const Nav = () => {
         <NavLink to={'/'}>Home</NavLink>
       </li>
       <li>
-        <NavLink>Parent</NavLink>
+        <NavLink to={'/parent'}>Parent</NavLink>
         
       </li>
       <li>
-        <NavLink>Item 3</NavLink>
+        <NavLink to={'/item3'}>Item 3</NavLink>
       </li>
     </>
   );
