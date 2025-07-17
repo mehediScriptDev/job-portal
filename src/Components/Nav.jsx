@@ -1,4 +1,4 @@
-import React from "react";
+import logo from '../../public/job.jpeg'
 import { Link } from "react-router";
 
 const Nav = () => {
@@ -45,7 +45,10 @@ const Nav = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost font-bold text-3xl">jobPortal</a>
+         <div>
+          <img src={logo} alt="logo" />
+           <a className="btn btn-ghost font-bold text-3xl">jobPortal</a>
+         </div>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
