@@ -45,8 +45,8 @@ const Nav = () => {
               {links}
             </ul>
           </div>
-         <div>
-          <img src={logo} alt="logo" />
+         <div className='flex items-center gap-1.5'>
+          <img className='w-20' src={logo} alt="logo" />
            <a className="btn btn-ghost font-bold text-3xl">jobPortal</a>
          </div>
         </div>
