@@ -8,11 +8,11 @@ const Nav = () => {
         <NavLink to={'/'}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={'/parent'}>Parent</NavLink>
+        <NavLink to={'/parent'}>Find Job</NavLink>
         
       </li>
       <li>
-        <NavLink to={'/item3'}>Item 3</NavLink>
+        <NavLink to={'/item3'}>Contact</NavLink>
       </li>
     </>
   );
