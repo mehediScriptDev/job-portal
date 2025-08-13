@@ -10,10 +10,10 @@ const Home = () => {
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="flex-1">
               <Motion.img
-              animate={{y:10}}
-              transition={{duration:2,delay:1,repeat:Infinity}}
+              animate={{y:[0,30,0]}}
+              transition={{duration:10,repeat:Infinity}}
               src={programmer}
-              className="max-w-sm rounded-br-4xl rounded-t-4xl border-b-4 border-l-4 border-l-blue-600 border-b-yellow-600"
+              className="max-w-sm rounded-br-4xl rounded-t-4xl border-b-4 border-l-4 border-l-blue-400 border-b-yellow-600"
             />
             </div>
             <div className="flex-1">
