@@ -1,4 +1,4 @@
-import { easeInOut, motion as Motion } from "motion/react"
+import { easeIn, easeInOut, motion as Motion } from "motion/react"
 
 const Home = () => {
   return (
@@ -12,7 +12,10 @@ const Home = () => {
             />
             <div>
               <Motion.h1 animate={{x:50}}
-              transition={{duration:3, delay:1, ease:easeInOut}} className="text-5xl font-bold">Job portal website!</Motion.h1>
+              transition={{duration:3, delay:1, ease:easeInOut, repeat:Infinity}} className="text-5xl font-bold">Job portal <Motion.span
+              animate={{color:["#ff0000", "#ffff00", "#00ff00"]}}
+              transition={{duration:2,repeat:Infinity,ease:easeIn}}
+              >website</Motion.span> offer you best jobs!</Motion.h1>
               <p className="py-6">
                 Provident cupiditate voluptatem et in. Quaerat fugiat ut
                 assumenda excepturi exercitationem quasi. In deleniti eaque aut
