@@ -1,4 +1,5 @@
 import { easeIn, easeInOut, motion as Motion } from "motion/react"
+import programmer from '../images/programmer.jpg'
 
 const Home = () => {
   return (
@@ -6,11 +7,13 @@ const Home = () => {
       <div>
         <div className="hero min-h-screen">
           <div className="hero-content flex-col lg:flex-row-reverse">
-            <img
-              src="https://www.webnox.in/wp-content/uploads/2022/10/Job-Portal-Software.png"
+            <div className="flex-1">
+              <img
+              src={programmer}
               className="max-w-sm rounded-lg animate-pulse"
             />
-            <div>
+            </div>
+            <div className="flex-1">
               <Motion.h1 animate={{x:50}}
               transition={{duration:3, delay:1, ease:easeInOut, repeat:Infinity}} className="text-5xl font-bold">Job portal <Motion.span
               animate={{color:["#ff0000", "#ffff00", "#00ff00"]}}
