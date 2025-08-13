@@ -1,4 +1,4 @@
-import { easeInOut, motion } from "motion/react"
+import { easeInOut, motion as Motion } from "motion/react"
 
 const Home = () => {
   return (
@@ -11,8 +11,8 @@ const Home = () => {
               className="max-w-sm rounded-lg animate-pulse"
             />
             <div>
-              <motion.h1 animate={{x:50}}
-              transition={{duration:3, delay:1, ease:easeInOut}} className="text-5xl font-bold">Job portal website!</motion.h1>
+              <Motion.h1 animate={{x:50}}
+              transition={{duration:3, delay:1, ease:easeInOut}} className="text-5xl font-bold">Job portal website!</Motion.h1>
               <p className="py-6">
                 Provident cupiditate voluptatem et in. Quaerat fugiat ut
                 assumenda excepturi exercitationem quasi. In deleniti eaque aut
