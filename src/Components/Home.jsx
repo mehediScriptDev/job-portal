@@ -1,6 +1,7 @@
 import { easeIn, easeInOut, motion as Motion } from "motion/react"
 import programmer from '../images/programmer.jpg'
 
+
 const Home = () => {
   return (
     <div>
@@ -8,9 +9,11 @@ const Home = () => {
         <div className="hero min-h-screen">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="flex-1">
-              <img
+              <Motion.img
+              animate={{y:10}}
+              transition={{duration:2,delay:1,repeat:Infinity}}
               src={programmer}
-              className="max-w-sm rounded-lg animate-pulse"
+              className="max-w-sm rounded-br-4xl rounded-t-4xl border-b-4 border-l-4 border-l-blue-600 border-b-yellow-600"
             />
             </div>
             <div className="flex-1">
