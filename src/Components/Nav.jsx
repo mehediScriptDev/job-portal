@@ -47,7 +47,7 @@ const Nav = () => {
           </div>
          <div className='flex items-center gap-1.5'>
           <img className='w-20' src={logo} alt="logo" />
-           <a className="btn btn-ghost font-bold text-3xl">jobPortal</a>
+           <a className="font-bold text-3xl"><span className='text-primary tracking-tight'>job</span>Portal</a>
          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
