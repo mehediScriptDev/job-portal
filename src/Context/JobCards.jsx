@@ -1,7 +1,8 @@
 import { GrLocation } from "react-icons/gr";
+import { Link } from "react-router";
 
 const JobCards = ({ job }) => {
-  const { company, company_logo, requirements, description, location, title, salaryRange } =
+  const {_id, company, company_logo, requirements, description, location, title, salaryRange } =
     job;
   return (
     <div>
@@ -31,9 +32,11 @@ const JobCards = ({ job }) => {
           </div>
           <div className="card-actions flex justify-between items-center mt-4">
             <div>
-                <p>Salary: {salaryRange.min} - {salaryRange.max} {salaryRange.currency}</p>
+                <p><span className="font-bold">Salary: </span> {salaryRange.min} - {salaryRange.max} {salaryRange.currency}</p>
             </div>
+            <Link to={`/jobs/${_id}`}>
             <button className="btn btn-primary">Apply</button>
+            </Link>
           </div>
         </div>
       </div>

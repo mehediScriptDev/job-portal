@@ -11,6 +11,7 @@ import Login from "./Components/Login.jsx";
 import MainHome from "./Components/MainHome.jsx";
 import FindJob from "./Components/FindJob.jsx";
 import Contact from "./Components/Contact.jsx";
+import JobDetails from "./Context/JobDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
        {
         path: "/jobs",
         element: <FindJob></FindJob>,
+      },
+      {
+        path:'/jobs/:id',
+        element: <JobDetails></JobDetails>,
+        loader: ({params})=> fetch(`http://localhost:5000/jobs/${params.id}`)
       },
      {
         path: "/contact",
