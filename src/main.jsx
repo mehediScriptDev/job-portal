@@ -12,6 +12,7 @@ import MainHome from "./Components/MainHome.jsx";
 import FindJob from "./Components/FindJob.jsx";
 import Contact from "./Components/Contact.jsx";
 import JobDetails from "./Context/JobDetails.jsx";
+import PrivateRoute from "./Components/Private/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/jobs/:id',
-        element: <JobDetails></JobDetails>,
+        element: <PrivateRoute> <JobDetails></JobDetails> </PrivateRoute>,
         loader: ({params})=> fetch(`http://localhost:5000/jobs/${params.id}`)
       },
      {
