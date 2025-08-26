@@ -10,25 +10,19 @@ const ApplyJob = () => {
     }
   return (
     <div>
-      <div className="hero bg-base-200 min-h-screen">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-          </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <div className="card-body">
-              <form onSubmit={submitForm} className="fieldset">
+      <div className=" min-h-screen">
+        <div className=" ">
+           
+          <div className=" w-full bg-base-100  px-5 shadow-2xl">
+           <h1 className="text-3xl w-full py-1 text-center font-bold">Apply job!</h1>
+            <div className="w-full">
+              <form onSubmit={submitForm} className="flex flex-col w-full">
                 <label className="label">Linkedin URL</label>
-                <input type="url" className="input" name="linkedin" placeholder="Linkedin URL" />
+                <input type="url" className="input w-full" name="linkedin" placeholder="Linkedin URL" />
                 <label className="label">Github URL</label>
-                <input type="url" className="input" name="github" placeholder="Github URL" />
+                <input type="url" className="input w-full" name="github" placeholder="Github URL" />
                 <label className="label">Resume URL</label>
-                <input type="url" className="input" name="resume" placeholder="Resume URL" />
+                <input type="url" className="input w-full" name="resume" placeholder="Resume URL" />
                 
                 
                 <button className="btn btn-primary mt-4">Apply</button>
