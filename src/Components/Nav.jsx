@@ -8,7 +8,7 @@ const Nav = () => {
         <NavLink to={'/'}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={'/jobs'}>Find Job</NavLink>
+        <NavLink to={'/hotjobs'}>Find Job</NavLink>
         
       </li>
       <li>

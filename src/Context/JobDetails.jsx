@@ -18,7 +18,7 @@ const JobDetails = () => {
 
   return (
     <div>
-      <div className="card bg-base-100 py-12 shadow-sm">
+      <div className="card bg-base-100 py-40 shadow-sm">
         <div className="flex gap-2">
           <figure>
             <img className="w-16" src={company_logo} alt="Shoes" />
@@ -46,7 +46,7 @@ const JobDetails = () => {
                 {salaryRange.max} {salaryRange.currency}
               </p>
             </div>
-            <Link to={`/jobs/${_id}`}>
+            <Link to={`/applyjob/${_id}`}>
               <button className="btn btn-primary">Apply</button>
             </Link>
           </div>
