@@ -57,7 +57,7 @@ const Nav = () => {
         </div>
         <div className="navbar-end space-x-3">
           <Link to={'/register'} className="underline cursor-pointer">Register </Link>
-          <a className="btn btn-primary">Login </a>
+          <Link to={'/login'} className="btn btn-primary">Login </Link>
         </div>
       </div>
     </div>
