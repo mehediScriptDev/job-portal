@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import AuthContext from "../Context/AuthContext/AuthContext";
 import { Link } from "react-router";
 import { GoogleAuthProvider } from "firebase/auth";
+import { Navigate } from "react-router";
 
 const Login = () => {
   const [err, setError] = useState("");
@@ -14,6 +15,7 @@ const Login = () => {
     googleLogin(provider)
       .then((result) => {
         setUser(result.user);
+        Navigate('/')
       })
       .catch((err) => {
         setError(err.message);

@@ -1,5 +1,8 @@
+import { useParams } from "react-router";
 import Swal from "sweetalert2";
 const ApplyJob = () => {
+  const {id} = useParams();
+  console.log(id);
   const submitForm = (e) => {
     e.preventDefault();
     const form = e.target;
