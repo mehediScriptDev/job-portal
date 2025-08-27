@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import AuthContext from './AuthContext';
 import { CgPassword } from 'react-icons/cg';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import auth from '../../Firebase/firebase.init';
 
 const AuthProvider = ({children}) => {
@@ -28,9 +28,13 @@ const AuthProvider = ({children}) => {
             unsubscribe();
         }
     },[])
+    const signOUT = ()=>{
+        return signOut(auth);
+    }
 
     const authinfo={
         user,
+        signOUT,
         googleLogin,
         setUser,
         setLoading,

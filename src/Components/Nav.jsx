@@ -1,24 +1,34 @@
-import { useContext } from 'react';
-import logo from '../../public/job.jpeg'
+import { useContext } from "react";
+import logo from "../../public/job.jpeg";
 import { Link, NavLink } from "react-router";
-import AuthContext from '../Context/AuthContext/AuthContext';
+import AuthContext from "../Context/AuthContext/AuthContext";
+import Swal from "sweetalert2";
 
 const Nav = () => {
-  const {user} = useContext(AuthContext);
+  const { user,setError, signOUT } = useContext(AuthContext);
   const links = (
     <>
       <li>
-        <NavLink to={'/'}>Home</NavLink>
+        <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={'/hotjobs'}>Find Job</NavLink>
-        
+        <NavLink to={"/hotjobs"}>Find Job</NavLink>
       </li>
       <li>
-        <NavLink to={'/contact'}>Contact</NavLink>
+        <NavLink to={"/contact"}>Contact</NavLink>
       </li>
     </>
   );
+  const signoutUser = () => {
+    signOUT().then(() => {
+      Swal.fire({
+        title: "Error!",
+        text: "Do you want to continue",
+        icon: "success",
+        confirmButtonText: "Cool",
+      });
+    }).catch((errr)=>setError(errr.message))
+  };
   return (
     <div>
       <div className="navbar bg-base-100  border-none">
@@ -48,26 +58,32 @@ const Nav = () => {
               {links}
             </ul>
           </div>
-         <div className='flex items-center gap-1.5'>
-          <img className='w-20' src={logo} alt="logo" />
-           <a className="font-bold text-3xl"><span className='text-primary tracking-tight'>job</span>Portal</a>
-         </div>
+          <div className="flex items-center gap-1.5">
+            <img className="w-20" src={logo} alt="logo" />
+            <a className="font-bold text-3xl">
+              <span className="text-primary tracking-tight">job</span>Portal
+            </a>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {links}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end space-x-3">
-          
-            {!user&&
+          {!user && (
             <>
-          <Link to={'/register'} className="underline cursor-pointer">Register </Link>
-          <Link to={'/login'} className="btn btn-primary">Login </Link></>}
-          {user&&
+              <Link to={"/register"} className="underline cursor-pointer">
+                Register{" "}
+              </Link>
+              <Link to={"/login"} className="btn btn-primary">
+                Login{" "}
+              </Link>
+            </>
+          )}
+          {user && (
             <>
-          <button className='btn'>SignOut</button> </>}
-          
+              <button onClick={signoutUser} className="btn">SignOut</button>{" "}
+            </>
+          )}
         </div>
       </div>
     </div>
