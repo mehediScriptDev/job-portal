@@ -3,11 +3,23 @@ import login from "../images/Login.gif";
 import { useContext, useState } from "react";
 import AuthContext from "../Context/AuthContext/AuthContext";
 import { Link } from "react-router";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Register = () => {
   const [err,setError] = useState('');
 
-  const {createuser} =useContext(AuthContext);
+  const {createuser,googleLogin,setUser} =useContext(AuthContext);
+
+  const provider = new GoogleAuthProvider();
+    const handlegoogleLogin = () => {
+      googleLogin(provider)
+        .then((result) => {
+          setUser(result.user);
+        })
+        .catch((err) => {
+          setError(err.message);
+        });
+    };
 
   const handlesubmit = (e) => {
     e.preventDefault();
@@ -45,7 +57,7 @@ const Register = () => {
             <p className="text-gray-500">
               Access to all features. No credit card required.
             </p>
-            <button className="btn w-full bg-white text-black border-[#e5e5e5]">
+            <button onClick={handlegoogleLogin} className="btn w-full bg-white text-black border-[#e5e5e5]">
               <svg
                 aria-label="Google logo"
                 width="16"
@@ -120,7 +132,7 @@ const Register = () => {
                   placeholder="Type your Password here"
                 />
 
-                <button className="btn btn-primary mt-4">Login</button>
+                <button className="btn btn-primary mt-4">Register</button>
                 <div>
                   {
                     err&&

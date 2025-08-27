@@ -1,7 +1,10 @@
+import { useContext } from 'react';
 import logo from '../../public/job.jpeg'
 import { Link, NavLink } from "react-router";
+import AuthContext from '../Context/AuthContext/AuthContext';
 
 const Nav = () => {
+  const {user} = useContext(AuthContext);
   const links = (
     <>
       <li>
@@ -56,8 +59,15 @@ const Nav = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-3">
+          
+            {!user&&
+            <>
           <Link to={'/register'} className="underline cursor-pointer">Register </Link>
-          <Link to={'/login'} className="btn btn-primary">Login </Link>
+          <Link to={'/login'} className="btn btn-primary">Login </Link></>}
+          {user&&
+            <>
+          <button className='btn'>SignOut</button> </>}
+          
         </div>
       </div>
     </div>
