@@ -15,6 +15,9 @@ const Nav = () => {
         <NavLink to={"/hotjobs"}>Find Job</NavLink>
       </li>
       <li>
+        <NavLink to={"/my-applications"}>MyApplications</NavLink>
+      </li>
+      <li>
         <NavLink to={"/contact"}>Contact</NavLink>
       </li>
     </>

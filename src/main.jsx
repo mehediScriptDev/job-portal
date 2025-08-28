@@ -14,6 +14,7 @@ import Contact from "./Components/Contact.jsx";
 import JobDetails from "./Context/JobDetails.jsx";
 import PrivateRoute from "./Components/Private/PrivateRoute.jsx";
 import ApplyJob from "./Components/ApplyJob.jsx";
+import MyApplications from "./Components/MyApplications.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path:'/applyjob/:id',
         element: <ApplyJob></ApplyJob>,
+      },
+      {
+        path: '/my-applications',
+        element: <MyApplications></MyApplications>
       },
      {
         path: "/contact",

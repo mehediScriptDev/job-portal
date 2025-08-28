@@ -34,7 +34,7 @@ const ApplyJob = () => {
           
           
         }
-        navigate('/')
+        navigate('/my-applications')
       });
   };
 
