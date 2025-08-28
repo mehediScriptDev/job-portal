@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/my-applications',
-        element: <MyApplications></MyApplications>
+        element: <PrivateRoute> <MyApplications></MyApplications> </PrivateRoute>
       },
      {
         path: "/contact",
