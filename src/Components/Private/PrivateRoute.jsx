@@ -4,7 +4,11 @@ import { Navigate } from 'react-router';
 
 const PrivateRoute = ({children}) => {
 
-    const {user} = useContext(AuthContext);
+      const { user, loading } = useContext(AuthContext);
+
+  if (loading) {
+    return <p className="text-center py-10">Loading...</p>; 
+  }
     if(user){
         return children;
     }
