@@ -52,8 +52,8 @@ const router = createBrowserRouter([
         element: <PrivateRoute> <MyApplications></MyApplications> </PrivateRoute>
       },
      {
-        path: "/contact",
-        element: <Contact></Contact>,
+        path: "/addjob",
+        element: <PrivateRoute><Contact></Contact></PrivateRoute>,
       },
     
     
