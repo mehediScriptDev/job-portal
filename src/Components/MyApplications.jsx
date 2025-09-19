@@ -14,7 +14,8 @@ const MyApplications = () => {
   }, [user,loading]);
 
   if(loading){
-    return <h1>loading.....</h1>
+    return <span className="loading loading-spinner"></span>
+    
   }
   return (
     <div className="py-10">

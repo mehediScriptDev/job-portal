@@ -5,7 +5,7 @@ import AuthContext from "../Context/AuthContext/AuthContext";
 import Swal from "sweetalert2";
 
 const Nav = () => {
-  const { user,setError, signOUT } = useContext(AuthContext);
+  const { user,setError, loading, signOUT } = useContext(AuthContext);
   const links = (
     <>
       <li>
@@ -71,7 +71,7 @@ const Nav = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className="navbar-end space-x-3">
+        {/* <div className="navbar-end space-x-3">
           {!user && (
             <>
               <Link to={"/register"} className="underline cursor-pointer">
@@ -87,7 +87,25 @@ const Nav = () => {
               <button onClick={signoutUser} className="btn">SignOut</button>{" "}
             </>
           )}
-        </div>
+        </div> */}
+        <div className="navbar-end space-x-3">
+        {loading ? (
+          <span className="loading loading-spinner"></span>
+        ) : !user ? (
+          <>
+            <Link to={"/register"} className="underline cursor-pointer">
+              Register
+            </Link>
+            <Link to={"/login"} className="btn btn-primary">
+              Login
+            </Link>
+          </>
+        ) : (
+          <button onClick={signoutUser} className="btn">
+            SignOut
+          </button>
+        )}
+      </div>
       </div>
     </div>
   );
