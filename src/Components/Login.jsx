@@ -1,12 +1,12 @@
 import login from "../images/Login.gif";
 import { useContext, useState } from "react";
 import AuthContext from "../Context/AuthContext/AuthContext";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { GoogleAuthProvider } from "firebase/auth";
-import { Navigate } from "react-router";
 
 const Login = () => {
   const [err, setError] = useState("");
+  const navigate = useNavigate();
 
   const { loginUser, googleLogin, setUser } = useContext(AuthContext);
 
@@ -15,7 +15,7 @@ const Login = () => {
     googleLogin(provider)
       .then((result) => {
         setUser(result.user);
-        Navigate('/')
+        navigate('/')
       })
       .catch((err) => {
         setError(err.message);
