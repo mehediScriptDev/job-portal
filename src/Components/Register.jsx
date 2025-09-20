@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import AuthContext from "../Context/AuthContext/AuthContext";
 import { Link, useNavigate } from "react-router";
 import { GoogleAuthProvider } from "firebase/auth";
+import axios from "axios";
 
 const Register = () => {
   const [err,setError] = useState('');
@@ -16,7 +17,11 @@ const Register = () => {
       googleLogin(provider)
         .then((result) => {
           setUser(result.user);
-          navigate('/');
+          const {email}= result.user;
+          const user ={email: email};
+          axios.post("http://localhost:5000/jwt",user)
+          .then(data=>console.log(data));
+          // navigate('/');
         })
         .catch((err) => {
           setError(err.message);
@@ -40,7 +45,11 @@ const Register = () => {
     setError('');
 
     createuser(email,password)
-    .then(result=>console.log(result.user))
+    .then(result=>{
+      setUser(result.user)
+      navigate('/')
+
+    })
     .catch(error=>console.log(error.message))
 
   };

@@ -41,7 +41,8 @@ const Login = () => {
 
     loginUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        setUser(result.user);
+        navigate("/")
       })
       .catch((error) => {
         console.log(error);
