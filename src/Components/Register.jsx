@@ -46,7 +46,7 @@ const Register = () => {
         console.log(result.user.email);
         const user = { email: email };
         axios
-          .post("http://localhost:5000/jwt", user)
+          .post("http://localhost:5000/jwt", user,{withCredentials:true})
           .then((res) => console.log(res.data));
         // navigate('/')
       })
