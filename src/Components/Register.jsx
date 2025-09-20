@@ -42,7 +42,7 @@ const Register = () => {
 
     createuser(email, password)
       .then((result) => {
-        // setUser(result.user)
+        setUser(result.user)
         console.log(result.user.email);
         const user = { email: email };
         axios
