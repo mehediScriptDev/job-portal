@@ -6,8 +6,8 @@ const Contact = () => {
         const formData = new FormData(e.target);
         const initialData = Object.fromEntries(formData.entries());
         console.log(initialData)
-        const {location,jobType,category, ...newjob} = initialData;
-        console.log(newjob)
+        // const {location,jobType,category, ...newjob} = initialData;
+        // console.log(newjob)
     }
   return (
     <div className="container mx-auto">
