@@ -30,14 +30,14 @@ const MyApplications = () => {
       "
       >
         
-        {job.map((singleAppication) => (
-          <div>
+        {job.map((singleAppication,index) => (
+          <div key={index}>
             {/* <img src={singleAppication.company_logo} alt="logo" />
             <h1>{singleAppication.title}</h1>
             <h2>{singleAppication.jobType}</h2>
             <h3>{singleAppication.company}</h3> */}
             <div className="overflow-x-auto">
-              <table className="table">
+              <table className="table ">
                 {/* head */}
                 
                 <tbody>

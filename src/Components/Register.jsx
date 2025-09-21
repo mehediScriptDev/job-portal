@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import AuthContext from "../Context/AuthContext/AuthContext";
 import { Link, useNavigate } from "react-router";
 import { GoogleAuthProvider } from "firebase/auth";
-import axios from "axios";
+// import axios from "axios";
 
 const Register = () => {
   const [err, setError] = useState("");
@@ -42,11 +42,12 @@ const Register = () => {
 
     createuser(email, password)
       .then((result) => {
-        setUser(result.user)
+        setUser(result.user);
         console.log(result.user.email);
-        const user = {email: email}
-        axios.post('http://localhost:5000/jwt',user, {withCredentials:true})
-        .then(res=>console.log(res.data))
+        // const user = { email: email };
+        // axios
+        //   .post("http://localhost:5000/jwt", user, { withCredentials: true })
+        //   .then((res) => console.log(res.data));
         // navigate('/')
       })
       .catch((error) => console.log(error.message));
