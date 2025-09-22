@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom"; // ✅ FIXED
 import Error from "./Components/Error.jsx";
 import Register from "./Components/Register.jsx";
 import Home from "./Components/Home.jsx";
@@ -19,44 +19,40 @@ import MyApplications from "./Components/MyApplications.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
-    errorElement: <Error></Error>,
+    element: <App />,
+    errorElement: <Error />,
     children: [
+      { path: "/", element: <MainHome /> },
+      { path: "/register", element: <Register /> },
+      { path: "/login", element: <Login /> },
+      { path: "/hotjobs", element: <FindJob /> },
       {
-        path: "/",
-        element: <MainHome></MainHome>,
+        path: "/jobs/:id",
+        element: (
+          <PrivateRoute>
+            <JobDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/jobs/${params.id}`),
       },
+      { path: "/applyjob/:id", element: <ApplyJob /> },
       {
-        path: "/register",
-        element: <Register></Register>,
-      },
-      {
-        path: "/login",
-        element: <Login></Login>,
-      },
-       {
-        path: "/hotjobs",
-        element: <FindJob></FindJob>,
-      },
-      {
-        path:'/jobs/:id',
-        element: <PrivateRoute> <JobDetails></JobDetails> </PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/jobs/${params.id}`)
-      },
-      {
-        path:'/applyjob/:id',
-        element: <ApplyJob></ApplyJob>,
+        path: "/my-applications",
+        element: (
+          <PrivateRoute>
+            <MyApplications />
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/my-applications',
-        element: <PrivateRoute> <MyApplications></MyApplications> </PrivateRoute>
-      },
-     {
         path: "/addjob",
-        element: <PrivateRoute><Contact></Contact></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Contact />
+          </PrivateRoute>
+        ),
       },
-    
-    
     ],
   },
 ]);
@@ -68,3 +64,12 @@ createRoot(document.getElementById("root")).render(
     </AuthProvider>
   </StrictMode>
 );
+// createRoot(document.getElementById("root")).render(
+//   <StrictMode>
+//     <RouterProvider router={router}>
+//       <AuthProvider>
+//         {/* rest of app */}
+//       </AuthProvider>
+//     </RouterProvider>
+//   </StrictMode>
+// );

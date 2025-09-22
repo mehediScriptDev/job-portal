@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router";
 import useAuth from "./useAuth";
+
 
 const instance = axios.create({
   baseURL: "http://localhost:5000/",
@@ -9,8 +9,10 @@ const instance = axios.create({
 });
 
 const useAxios = () => {
-  const  signOUT  = useAuth();
-  const navigate = useNavigate();
+ 
+  const signOUT = useAuth();
+
+  console.log("15-signOUT", signOUT)
 
   useEffect(() => {
     instance.interceptors.response.use(
@@ -18,19 +20,22 @@ const useAxios = () => {
         return response;
       },
       (error) => {
-        if (error.status == 401 || error.status == 402) {
-          signOUT()
-            .then(() => {
-              navigate("/login");
-            })
-            .catch((err) => {
-              console.log(err.status);
-            });
+        
+        if(error.response.status === 401 || error.response.status === 403){
+          signOUT
+          .then(()=>{
+            console.log("next time bring token with you")
+          })
+          .catch(err=>{
+            console.log(err)
+          })
         }
         return Promise.reject(error);
       }
     );
   }, []);
+
+
   return instance;
 };
 
