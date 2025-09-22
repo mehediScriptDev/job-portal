@@ -10,10 +10,12 @@ import {
 } from "firebase/auth";
 import auth from "../../Firebase/firebase.init";
 import axios from "axios";
+import useAxios from "../../Components/hooks/useAxios";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const axiosHook = useAxios();
 
   const createuser = (email, password) => {
     setLoading(true);
@@ -36,6 +38,12 @@ const AuthProvider = ({ children }) => {
           .post("http://localhost:5000/jwt", userData, {withCredentials:true})
           .then((res) => console.log(res.data))
           .catch((err) => console.log(err));
+      }
+      else{
+        // axios.post("http://localhost:5000/logout", {}, {withCredentials:true})
+        // .then(res=>console.log(res.data))
+        axiosHook.post("logout")
+        .then(res=>console.log(res.data))
       }
     });
     return () => {
