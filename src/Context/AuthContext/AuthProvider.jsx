@@ -10,7 +10,7 @@ import {
   signOut,
 } from "firebase/auth";
 import auth from "../../Firebase/firebase.init";
-import useAxios from "../../Components/hooks/useAxios";
+// import useAxios from "../../Components/hooks/useAxios";
 
 import axios from "axios";
 
@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, provider);
   };
 
-  const axiosHook = useAxios();
+  // const axiosHook = useAxios();
 
   useEffect(() => {
     
@@ -44,9 +44,9 @@ const AuthProvider = ({ children }) => {
           .then((res) => console.log(res.data))
           .catch((err) => console.log(err));
       } else {
-        // axios.post("http://localhost:5000/logout", {}, {withCredentials:true})
-        // .then(res=>console.log(res.data))
-        axiosHook.post("logout").then((res) => console.log(res.data));
+        axios.post("http://localhost:5000/logout", {}, {withCredentials:true})
+        .then(res=>console.log(res.data))
+        // axiosHook.post("logout").then((res) => console.log(res.data));
       }
     });
     return () => {

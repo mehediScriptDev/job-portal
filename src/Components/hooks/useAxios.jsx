@@ -1,7 +1,6 @@
 import axios from "axios";
-import React, { useEffect } from "react";
-import useAuth from "./useAuth";
-
+import React, { useContext, useEffect } from "react";
+import AuthContext from "../../Context/AuthContext/AuthContext";
 
 const instance = axios.create({
   baseURL: "http://localhost:5000/",
@@ -9,10 +8,8 @@ const instance = axios.create({
 });
 
 const useAxios = () => {
- 
-  const signOUT = useAuth();
-
-  console.log("15-signOUT", signOUT)
+  const { signOUT, user } = useContext(AuthContext);
+  console.log(user);
 
   useEffect(() => {
     instance.interceptors.response.use(
@@ -20,21 +17,19 @@ const useAxios = () => {
         return response;
       },
       (error) => {
-        
-        if(error.response.status === 401 || error.response.status === 403){
-          signOUT
-          .then(()=>{
-            console.log("next time bring token with you")
-          })
-          .catch(err=>{
-            console.log(err)
-          })
+        if (error.status == 401 || error.status == 403) {
+          signOUT()
+            .then(() => {
+              console.log("log out successfully");
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         }
         return Promise.reject(error);
       }
     );
   }, []);
-
 
   return instance;
 };
