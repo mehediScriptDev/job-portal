@@ -6,7 +6,6 @@ const PrivateRoute = ({children}) => {
 
       const { user, loading } = useContext(AuthContext);
 
-      console.log("user:", user)
 
   if (loading) {
     return <p className="text-center py-10">Loading...</p>; 

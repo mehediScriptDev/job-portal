@@ -4,7 +4,7 @@ import React, {  useEffect } from "react";
 import useAuth from './useAuth';
 
 const instance = axios.create({
-  baseURL: "https://job-portal-server-1hf4kqc5c-mehedis-projects-1a127c95.vercel.app/",
+  baseURL: "https://job-portal-server-eight-bay.vercel.app/",
   withCredentials: true,
   
 });

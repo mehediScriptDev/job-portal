@@ -46,7 +46,7 @@ const Register = () => {
         console.log(result.user.email);
         // const user = { email: email };
         // axios
-        //   .post("https://job-portal-server-1hf4kqc5c-mehedis-projects-1a127c95.vercel.app/jwt", user, { withCredentials: true })
+        //   .post("https://job-portal-server-eight-bay.vercel.app/jwt", user, { withCredentials: true })
         //   .then((res) => console.log(res.data));
         // navigate('/')
       })

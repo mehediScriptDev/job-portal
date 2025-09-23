@@ -34,7 +34,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://job-portal-server-1hf4kqc5c-mehedis-projects-1a127c95.vercel.app/jobs/${params.id}`),
+          fetch(`https://job-portal-server-eight-bay.vercel.app/jobs/${params.id}`),
       },
       { path: "/applyjob/:id", element: <ApplyJob /> },
       {

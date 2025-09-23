@@ -38,13 +38,13 @@ const AuthProvider = ({ children }) => {
       if (currentUser?.email) {
         const userData = { email: currentUser?.email };
         axios
-          .post("https://job-portal-server-1hf4kqc5c-mehedis-projects-1a127c95.vercel.app/jwt", userData, {
+          .post("https://job-portal-server-eight-bay.vercel.app/jwt", userData, {
             withCredentials: true,
           })
           .then((res) => console.log(res.data))
           .catch((err) => console.log(err));
       } else {
-        axios.post("https://job-portal-server-1hf4kqc5c-mehedis-projects-1a127c95.vercel.app/logout", {}, {withCredentials:true})
+        axios.post("https://job-portal-server-eight-bay.vercel.app/logout", {}, {withCredentials:true})
         .then(res=>console.log(res.data))
         // axiosHook.post("logout").then((res) => console.log(res.data));
         // 

@@ -15,7 +15,7 @@ const ApplyJob = () => {
     const resume = form.resume.value;
 
     const jobapplication = { job_id: id, applicant_email: user.email, linkedin, github, resume };
-    fetch("https://job-portal-server-1hf4kqc5c-mehedis-projects-1a127c95.vercel.app/jobapplications", {
+    fetch("https://job-portal-server-eight-bay.vercel.app/jobapplications", {
       method: "POST",
       headers: {
         "content-type": "application/json",
