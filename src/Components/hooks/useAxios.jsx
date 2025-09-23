@@ -1,15 +1,17 @@
 import axios from "axios";
-import React, { useContext, useEffect } from "react";
-import AuthContext from "../../Context/AuthContext/AuthContext";
+import React, {  useEffect } from "react";
+// import AuthContext from "../../Context/AuthContext/AuthContext";
+import useAuth from './useAuth';
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "https://job-portal-server-1hf4kqc5c-mehedis-projects-1a127c95.vercel.app/",
   withCredentials: true,
+  
 });
 
 const useAxios = () => {
-  const { signOUT, user } = useContext(AuthContext);
-  console.log(user);
+  const { signOUT } = useAuth();
+  // console.log(user);
 
   useEffect(() => {
     instance.interceptors.response.use(

@@ -10,10 +10,10 @@ const MyApplications = () => {
 
   useEffect(() => {
     if (!loading && user.email) {
-      // fetch(`http://localhost:5000/job-application?email=${user.email}`)
+      // fetch(`https://job-portal-server-1hf4kqc5c-mehedis-projects-1a127c95.vercel.app/job-application?email=${user.email}`)
       //   .then((res) => res.json())
       //   .then((data) => setJobs(data));
-      // axios.get(`http://localhost:5000/job-application?email=${user.email}`,{withCredentials:true})
+      // axios.get(`https://job-portal-server-1hf4kqc5c-mehedis-projects-1a127c95.vercel.app/job-application?email=${user.email}`,{withCredentials:true})
       // .then(res=>setJobs(res.data))
       axiosSecure.get(`job-application?email=${user.email}`)
       .then(res=>setJobs(res.data))
