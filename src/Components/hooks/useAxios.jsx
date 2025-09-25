@@ -13,25 +13,24 @@ const useAxios = () => {
   const { signOUT } = useAuth();
   // console.log(user);
 
-  useEffect(() => {
-    instance.interceptors.response.use(
-      (response) => {
-        return response;
-      },
-      (error) => {
-        if (error.status == 401 || error.status == 403) {
-          signOUT()
-            .then(() => {
-              console.log("log out successfully");
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-        }
-        return Promise.reject(error);
+useEffect(() => {
+  const interceptor = instance.interceptors.response.use(
+    response => response,
+    error => {
+      if (error.response && (error.response.status === 402 || error.response.status === 403)) {
+        signOUT()
+          .then(() => console.log("log out successfully"))
+          .catch(err => console.log(err));
       }
-    );
-  }, []);
+      return Promise.reject(error);
+    }
+  );
+
+  return () => {
+    instance.interceptors.response.eject(interceptor);
+  };
+}, [signOUT]);
+
 
   return instance;
 };
