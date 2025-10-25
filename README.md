@@ -94,7 +94,7 @@ npm run lint
 ```
 job-portal/
 ├── public/               # Static assets
-│   ├── job.jpeg         # Favicon
+│   ├── job.jpeg         # Application icon
 │   └── vite.svg
 ├── src/
 │   ├── Components/      # React components
@@ -107,11 +107,11 @@ job-portal/
 │   │   ├── Nav.jsx
 │   │   ├── Footer.jsx
 │   │   └── Private/    # Protected route components
-│   ├── Context/        # Context providers
-│   │   ├── AuthContext/
-│   │   ├── HotJobs.jsx
-│   │   ├── JobCards.jsx
-│   │   └── JobDetails.jsx
+│   ├── Context/        # Context providers and data components
+│   │   ├── AuthContext/  # Authentication context
+│   │   ├── HotJobs.jsx   # Hot jobs component
+│   │   ├── JobCards.jsx  # Job card component
+│   │   └── JobDetails.jsx # Job details component
 │   ├── Firebase/       # Firebase configuration
 │   │   └── firebase.init.js
 │   ├── images/         # Image assets
